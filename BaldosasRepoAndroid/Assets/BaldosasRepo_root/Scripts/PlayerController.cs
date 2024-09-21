@@ -9,10 +9,20 @@ public class PlayerController : MonoBehaviour
     private Vector3 lp; //last touch pos
     private float dragDistance; // distancia minima para swipe
 
+    //Input inputSystem;
+
+    private Vector3 targetPosition;
+    private bool isMoving;
+    [SerializeField]public float lanesDistance;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        dragDistance = Screen.height * 15 / 100;
+        //inputSystem = GetComponent<Input>();
+        targetPosition = transform.position;
+        isMoving = false;
+        dragDistance = Screen.height * 15 / 100; //Distancia del sweep
     }
 
     // Update is called once per frame
@@ -41,11 +51,17 @@ public class PlayerController : MonoBehaviour
                         {
                             //RIGHT SWEEP
                             Debug.Log("Right");
+                            targetPosition = transform.position + Vector3.right * lanesDistance;
+                            //isMoving = true;
+                            transform.position = Vector3.Lerp(transform.position, targetPosition, 2f);
                         }
                         else
                         {
                             //LEFT SWEEP
                             Debug.Log("Left");
+                            targetPosition = transform.position + Vector3.left * lanesDistance;
+                            //isMoving = true;
+                            transform.position = Vector3.Lerp(transform.position, targetPosition, 2f);
                         }
                     }
 
@@ -75,3 +91,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
+
+    
+      
+        
+       
+
