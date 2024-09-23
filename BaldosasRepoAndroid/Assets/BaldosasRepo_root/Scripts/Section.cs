@@ -52,6 +52,7 @@ public class Section : MonoBehaviour
         {
             transform.Translate(Vector3.forward * sectionSize * sectionCount); //La manda al final
             EnableRandomObstacle();
+            GameManager.Instance.sections += 1; //El GameManager cuenta cuantas secciones se han superado
         }
     }
 

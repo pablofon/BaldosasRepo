@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [Header("Game Status")]
     public bool gameCompleted = false;
     public bool gameOver = false;
+    public int sections = 0;
 
     [Header("Game Stats")]
     public int coins; //Monedas
