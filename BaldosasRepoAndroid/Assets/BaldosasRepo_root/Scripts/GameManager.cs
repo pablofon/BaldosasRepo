@@ -22,8 +22,8 @@ public class GameManager : MonoBehaviour
     public bool gameOver = false;
 
     [Header("Game Stats")]
-    public int coins;
-    public float gasolina;
+    public int coins; //Monedas
+    public float gasolina; //Gasolina (tiempo) que le queda al player
 
 
     private void Awake()
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     {
         if (gasolina <= 0f)
         {
-            gameOver = true;
+            gameOver = true; 
         }
 
         GasDown();
@@ -58,6 +58,6 @@ public class GameManager : MonoBehaviour
 
     void GasDown()
     {
-        gasolina -= Time.deltaTime;
+        gasolina -= Time.deltaTime; 
     }
 }
