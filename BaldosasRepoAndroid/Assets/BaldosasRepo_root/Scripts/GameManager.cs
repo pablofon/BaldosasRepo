@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public bool gameOver = false;
     public int sections = 0; //Secciones que el player ha pasado
     [SerializeField] int totalSections; //Secciones que el jugador tiene que pasar para completar el nivel
-    public bool levelCompleted = false;
+    public bool sectionsCompleted = false;
 
     [Header("Game Stats")]
     public int coins; //Monedas
@@ -60,11 +60,11 @@ public class GameManager : MonoBehaviour
 
         if (sections >= totalSections)
         {
-            levelCompleted = true;
+            sectionsCompleted = true;
         }
         else
         {
-            levelCompleted = false;
+            sectionsCompleted = false;
         }
     }
 
