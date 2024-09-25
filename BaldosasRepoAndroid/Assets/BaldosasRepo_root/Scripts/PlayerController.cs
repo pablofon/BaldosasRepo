@@ -54,12 +54,13 @@ public class PlayerController : MonoBehaviour
                             targetPosition = transform.position + (Vector3.right * lanesDistance);
                             //isMoving = true;
                             transform.position = Vector3.Lerp(transform.position, targetPosition, 2f);
+                            
                         }
                         else
                         {
                             //LEFT SWEEP
                             Debug.Log("Left");
-                            targetPosition = transform.position + Vector3.left * lanesDistance;
+                            targetPosition = transform.position + (Vector3.left * lanesDistance);
                             //isMoving = true;
                             transform.position = Vector3.Lerp(transform.position, targetPosition, 2f);
                         }
