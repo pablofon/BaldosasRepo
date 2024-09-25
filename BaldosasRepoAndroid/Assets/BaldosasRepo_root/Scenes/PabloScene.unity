@@ -1236,6 +1236,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1929068452097386254, guid: 1a7a68b9cfe9bab43bbfde8700628656,
+        type: 3}
+      propertyPath: totalSections
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2994179808225161929, guid: 1a7a68b9cfe9bab43bbfde8700628656,
         type: 3}
       propertyPath: m_RootOrder

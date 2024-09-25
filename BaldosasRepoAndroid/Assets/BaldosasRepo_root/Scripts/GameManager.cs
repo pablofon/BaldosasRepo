@@ -20,7 +20,9 @@ public class GameManager : MonoBehaviour
     [Header("Game Status")]
     public bool gameCompleted = false;
     public bool gameOver = false;
-    public int sections = 0;
+    public int sections = 0; //Secciones que el player ha pasado
+    [SerializeField] int totalSections; //Secciones que el jugador tiene que pasar para completar el nivel
+    public bool levelCompleted = false;
 
     [Header("Game Stats")]
     public int coins; //Monedas
@@ -55,6 +57,15 @@ public class GameManager : MonoBehaviour
         }
 
         GasDown();
+
+        if (sections >= totalSections)
+        {
+            levelCompleted = true;
+        }
+        else
+        {
+            levelCompleted = false;
+        }
     }
 
     void GasDown()
