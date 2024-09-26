@@ -5,13 +5,22 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    Rigidbody rb;
+    
     private Vector3 fp; //first touch pos
     private Vector3 lp; //last touch pos
     private float dragDistance; // distancia minima para swipe
 
-    //Input inputSystem;
+    [SerializeField] Transform[] positions;
 
+    //[SerializeField] Transform leftPosition;
+    //[SerializeField] Transform centerPosition;
+    //[SerializeField] Transform rightPosition;
+    //Vector3 currentPosition;
+    private bool onLeft;
+    private bool onRight;
     private Vector3 targetPosition;
+
     private bool isMoving;
     [SerializeField]public float lanesDistance;
 
@@ -19,8 +28,13 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //inputSystem = GetComponent<Input>();
-        targetPosition = transform.position;
+        rb = GetComponent<Rigidbody>();
+        targetPosition = positions[1].position;
+        transform.position = positions[1].position;
+        onLeft = false;
+        onRight = false;
+
+        //targetPosition = centerPosition.position;
         isMoving = false;
         dragDistance = Screen.height * 15 / 100; //Distancia del sweep
     }
@@ -51,18 +65,64 @@ public class PlayerController : MonoBehaviour
                         {
                             //RIGHT SWEEP
                             Debug.Log("Right");
-                            targetPosition = transform.position + (Vector3.right * lanesDistance);
-                            //isMoving = true;
-                            transform.position = Vector3.Lerp(transform.position, targetPosition, 2f);
+                            //targetPosition = transform.position + (Vector3.right * lanesDistance);
+                            isMoving = true;
+                            //transform.position = Vector3.Lerp(transform.position, targetPosition, 2f);
+
+                            if (transform.position.x < 2.9f)
+                            {
+                                rb.AddForce(Vector3.right * 300, ForceMode.Force);
+                            }
+
+                            float dist = Vector3.Distance(transform.position, positions[2].position);
+                            if (dist < 0.01f) { transform.position = positions[2].position; }
+                            //rb.AddForce(Vector3.right * 300, ForceMode.Force);
+
                             
+                            /*if (transform.position == positions[0].position )
+                            {
+                                targetPosition = positions[1].position;
+                                //transform.position = Vector3.Lerp(transform.position, targetPosition, 1f);
+                               rb.AddForce(Vector3.right*300,ForceMode.Force);
+                               
+                            }
+                            else if (transform.position == positions[1].position )
+                            {
+                                targetPosition = positions[2].position;
+                                //transform.position = Vector3.Lerp(transform.position, targetPosition, 1f);
+                                rb.AddForce(Vector3.right * 300, ForceMode.Force);
+
+
+                            }*/
+
+
+
                         }
                         else
                         {
+
+                            if (transform.position.x > -2.9f)
+                            {
+                                rb.AddForce(Vector3.left * 300, ForceMode.Force);
+                            }
                             //LEFT SWEEP
                             Debug.Log("Left");
-                            targetPosition = transform.position + (Vector3.left * lanesDistance);
+                            //targetPosition = transform.position + (Vector3.left * lanesDistance);
                             //isMoving = true;
-                            transform.position = Vector3.Lerp(transform.position, targetPosition, 2f);
+                            //transform.position = Vector3.Lerp(transform.position, targetPosition, 2f);
+                            //rb.AddForce(Vector3.left * 300, ForceMode.Force);
+                            /*if (transform.position == positions[2].position)
+                            {
+                                targetPosition = positions[1].position;
+                                //transform.position = Vector3.Lerp(transform.position, targetPosition, 1f);
+                                rb.AddForce(Vector3.left * 300, ForceMode.Force);
+                            }
+                            else if (transform.position == positions[1].position)
+                            {
+                                targetPosition = positions[0].position;
+                                rb.AddForce(Vector3.left * 300, ForceMode.Force);
+                                //transform.position = Vector3.Lerp(transform.position, targetPosition, 1f);
+                            }*/
                         }
                     }
 
