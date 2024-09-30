@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public bool gameCompleted = false;
     public bool gameOver = false;
     public int sections = 0; //Secciones que el player ha pasado
+    [SerializeField] int gasSection;
     [SerializeField] int totalSections; //Secciones que el jugador tiene que pasar para completar el nivel
     public bool sectionsCompleted = false;
 
