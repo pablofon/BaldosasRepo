@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/BaldosasRepo_root/Scenes/Scene1.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/BaldosasRepo_root/Scenes/PabloScene.unity
+    guid: 71430e2aec3a73240a5dc64396a64f4c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 239d90772756c834893ec4f8a03f499a,
       type: 2}
