@@ -9,7 +9,8 @@ public class Section : MonoBehaviour
     private int sectionCount;
     [SerializeField] float sectionSize;
     private static int lastRandomIndex = -1; //Es ESTÁTICA para poder compartir la variable entre todas las instancias de section y evitar que cada instancia tenga su variable lastRandomIndex
-    
+    public int currentRandomIndex;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,7 @@ public class Section : MonoBehaviour
 
       }
         int randomIndex = lastRandomIndex; //definimos randomIndex como -1
+        currentRandomIndex = randomIndex;
         while (randomIndex == lastRandomIndex) //Se cumple la condicion la primera vez, pero la segunda vez ya ha calculado un nuevo randomIndex
         {
             randomIndex = Random.Range(0, obstacles.Count); //Numero Random entre 0 y num max de obstáculos
@@ -53,6 +55,7 @@ public class Section : MonoBehaviour
             transform.Translate(Vector3.forward * sectionSize * sectionCount); //La manda al final
             EnableRandomObstacle();
             GameManager.Instance.sections += 1; //El GameManager cuenta cuantas secciones se han superado
+            GameManager.Instance.sectionsToGas += 1; //Tambien cuenta las secciones para que aparezca la gasolina
         }
     }
 

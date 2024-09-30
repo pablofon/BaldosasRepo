@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    Section section;
+    
     private static GameManager instance;
     public static GameManager Instance
     {
@@ -21,7 +23,8 @@ public class GameManager : MonoBehaviour
     public bool gameCompleted = false;
     public bool gameOver = false;
     public int sections = 0; //Secciones que el player ha pasado
-    [SerializeField] int gasSection;
+    public int sectionsToGas;
+    [SerializeField] int gasSection; //si sectionToGas = gasSection -> spawnea el pickup de gasolina
     [SerializeField] int totalSections; //Secciones que el jugador tiene que pasar para completar el nivel
     public bool sectionsCompleted = false;
 
@@ -48,6 +51,8 @@ public class GameManager : MonoBehaviour
     {
         gameCompleted = false;
         gameOver = false;
+        section = GetComponent<Section>();
+        //Section.Instance.
     }
 
     private void Update()
@@ -72,5 +77,16 @@ public class GameManager : MonoBehaviour
     void GasDown()
     {
         gasolina -= Time.deltaTime; 
+    }
+
+    void GasPickUpSpawn()
+    {
+        if (sectionsToGas == gasSection)
+        {
+            sectionsToGas = 0;
+            //Acceder a la lista de Section y acceder al currentRandomIndex
+            //Buscar en el hijo del obstaculo definido por randomIndex un objeto con el Tag PickUpSpawnPoint y spawnear un pickup en esa posicion
+
+        }
     }
 }
