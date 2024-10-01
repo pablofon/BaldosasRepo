@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacles: []
-  speed: 100
+  speed: 50
   sectionSize: 50
   currentRandomIndex: 0
 --- !u!1 &6676829665617880217
