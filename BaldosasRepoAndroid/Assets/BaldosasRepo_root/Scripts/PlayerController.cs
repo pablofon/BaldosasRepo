@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody rb;
+    Animator animator;
     
     private Vector3 fp; //first touch pos
     private Vector3 lp; //last touch pos
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
         targetPosition = positions[1].position;
         transform.position = positions[1].position;
         onLeft = false;
@@ -65,8 +67,10 @@ public class PlayerController : MonoBehaviour
                         {
                             //RIGHT SWEEP
                             Debug.Log("Right");
-                            //targetPosition = transform.position + (Vector3.right * lanesDistance);
+                            animator.SetTrigger("SoftRight");
+                            
                             isMoving = true;
+                            //targetPosition = transform.position + (Vector3.right * lanesDistance);
                             //transform.position = Vector3.Lerp(transform.position, targetPosition, 2f);
 
                             if (transform.position.x < 2.9f)
@@ -74,8 +78,8 @@ public class PlayerController : MonoBehaviour
                                 rb.AddForce(Vector3.right * 300, ForceMode.Force);
                             }
 
-                            float dist = Vector3.Distance(transform.position, positions[2].position);
-                            if (dist < 0.01f) { transform.position = positions[2].position; }
+                            //float dist = Vector3.Distance(transform.position, positions[2].position);
+                            //if (dist < 0.01f) { transform.position = positions[2].position; }
                             //rb.AddForce(Vector3.right * 300, ForceMode.Force);
 
                             
@@ -107,6 +111,7 @@ public class PlayerController : MonoBehaviour
                             }
                             //LEFT SWEEP
                             Debug.Log("Left");
+                            animator.SetTrigger("SoftLeft");
                             //targetPosition = transform.position + (Vector3.left * lanesDistance);
                             //isMoving = true;
                             //transform.position = Vector3.Lerp(transform.position, targetPosition, 2f);

@@ -1044,6 +1044,33 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &2143216606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6832658012187831267, guid: de1bb5a6da57c2640b53f3467bfb8221,
+    type: 3}
+  m_PrefabInstance: {fileID: 7177983437446077137}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2143216614
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143216606}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 90be8d7acd4158a4384fdea3758db636, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1145018289944755261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1253,5 +1280,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6832658012187831267, guid: de1bb5a6da57c2640b53f3467bfb8221,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2143216614}
   m_SourcePrefab: {fileID: 100100000, guid: de1bb5a6da57c2640b53f3467bfb8221, type: 3}
