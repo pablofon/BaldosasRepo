@@ -217,8 +217,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacles: []
-  speed: 10
+  speed: 100
   sectionSize: 50
+  currentRandomIndex: 0
 --- !u!1 &6676829665617880217
 GameObject:
   m_ObjectHideFlags: 0
