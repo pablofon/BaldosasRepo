@@ -5,6 +5,7 @@ using UnityEngine;
 public class Section : MonoBehaviour
 {
     public List<GameObject> obstacles;
+    public List<Transform> pickPositions;
     [SerializeField] float speed;
     private int sectionCount;
     [SerializeField] float sectionSize;
@@ -22,6 +23,9 @@ public class Section : MonoBehaviour
             if (child.tag == "Obstacle")
             {
                 obstacles.Add(child.gameObject);
+
+                
+
             }   
         }
 

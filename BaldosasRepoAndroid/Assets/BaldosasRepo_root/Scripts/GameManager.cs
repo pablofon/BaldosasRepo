@@ -86,6 +86,9 @@ public class GameManager : MonoBehaviour
             sectionsToGas = 0;
             //Acceder a la lista de Section y acceder al currentRandomIndex
             //Buscar en el hijo del obstaculo definido por randomIndex un objeto con el Tag PickUpSpawnPoint y spawnear un pickup en esa posicion
+            int obstacleNumber;
+            obstacleNumber = section.currentRandomIndex;
+            //section.pickPositions[obstacleNumber];
 
         }
     }
