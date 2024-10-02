@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
         if (sections >= totalSections)
         {
             sectionsCompleted = true;
+            //Aquí activa la Meta
         }
         else
         {

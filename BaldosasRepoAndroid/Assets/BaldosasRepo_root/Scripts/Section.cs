@@ -58,11 +58,19 @@ public class Section : MonoBehaviour
         currentRandomIndex = randomIndex;
         while (randomIndex == lastRandomIndex) //Se cumple la condicion la primera vez, pero la segunda vez ya ha calculado un nuevo randomIndex
         {
-            randomIndex = Random.Range(0, obstacles.Count); //Numero Random entre 0 y num max de obstáculos
+            randomIndex = Random.Range(0, obstacles.Count-1); //Numero Random entre 0 y num max de obstáculos-1 (el último es la meta)
         }
 
         lastRandomIndex = randomIndex; //igualamos lastRandomIndex con randomIndex actual. Así cuando vuelva a pedir un randomIndex evita repetir (Repite el while hasta que da otro numero.)
-        obstacles[randomIndex].SetActive(true);             //Activa uno aleatorio
+        if (GameManager.Instance.sectionsCompleted == false)
+        {
+            obstacles[randomIndex].SetActive(true);             //Activa uno aleatorio si no se ha completado la carrera
+        }
+        else
+        {
+            obstacles[obstacles.Count-1].SetActive(true); //Activa la meta si se ha completado la carrera
+        }
+        
     }
 
 }
