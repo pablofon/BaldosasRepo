@@ -5,7 +5,7 @@ using UnityEngine;
 public class Section : MonoBehaviour
 {
     public List<GameObject> obstacles;
-    public List<Transform> pickPositions;
+    public List<GameObject> gasPicks;
     [SerializeField] float speed;
     private int sectionCount;
     [SerializeField] float sectionSize;
@@ -32,23 +32,7 @@ public class Section : MonoBehaviour
         EnableRandomObstacle();
     }
 
-    public void EnableRandomObstacle()
-    {
-      foreach (GameObject obstacle in obstacles)
-      {
-            obstacle.SetActive(false); //Desactivamos todos los obstaculos
-
-      }
-        int randomIndex = lastRandomIndex; //definimos randomIndex como -1
-        currentRandomIndex = randomIndex;
-        while (randomIndex == lastRandomIndex) //Se cumple la condicion la primera vez, pero la segunda vez ya ha calculado un nuevo randomIndex
-        {
-            randomIndex = Random.Range(0, obstacles.Count); //Numero Random entre 0 y num max de obstáculos
-        }
-        
-        lastRandomIndex = randomIndex; //igualamos lastRandomIndex con randomIndex actual. Así cuando vuelva a pedir un randomIndex evita repetir (Repite el while hasta que da otro numero.)
-        obstacles[randomIndex].SetActive(true);             //Activa uno aleatorio
-    }
+   
 
     void Update()
     {
@@ -56,11 +40,29 @@ public class Section : MonoBehaviour
 
         if(transform.position.z <= -sectionSize) //Si sale por detrás
         {
-            transform.Translate(Vector3.forward * sectionSize * sectionCount); //La manda al final
-            EnableRandomObstacle();
+            transform.Translate(Vector3.forward * sectionSize * sectionCount); //La manda al final 
             GameManager.Instance.sections += 1; //El GameManager cuenta cuantas secciones se han superado
             GameManager.Instance.sectionsToGas += 1; //Tambien cuenta las secciones para que aparezca la gasolina
+            EnableRandomObstacle();
         }
+    }
+
+    public void EnableRandomObstacle()
+    {
+        foreach (GameObject obstacle in obstacles)
+        {
+            obstacle.SetActive(false); //Desactivamos todos los obstaculos
+
+        }
+        int randomIndex = lastRandomIndex; //definimos randomIndex como -1
+        currentRandomIndex = randomIndex;
+        while (randomIndex == lastRandomIndex) //Se cumple la condicion la primera vez, pero la segunda vez ya ha calculado un nuevo randomIndex
+        {
+            randomIndex = Random.Range(0, obstacles.Count); //Numero Random entre 0 y num max de obstáculos
+        }
+
+        lastRandomIndex = randomIndex; //igualamos lastRandomIndex con randomIndex actual. Así cuando vuelva a pedir un randomIndex evita repetir (Repite el while hasta que da otro numero.)
+        obstacles[randomIndex].SetActive(true);             //Activa uno aleatorio
     }
 
 }

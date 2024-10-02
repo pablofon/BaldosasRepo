@@ -5,6 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     Section section;
+    public int obstacleNumber;
+    Vector3 pickupSpawnPos;
+    [SerializeField] GameObject gas;
     
     private static GameManager instance;
     public static GameManager Instance
@@ -51,8 +54,8 @@ public class GameManager : MonoBehaviour
     {
         gameCompleted = false;
         gameOver = false;
-        section = GetComponent<Section>();
-        //Section.Instance.
+        section = FindObjectOfType<Section>();
+        
     }
 
     private void Update()
@@ -72,6 +75,8 @@ public class GameManager : MonoBehaviour
         {
             sectionsCompleted = false;
         }
+
+        GasPickUpSpawn();
     }
 
     void GasDown()
@@ -79,16 +84,25 @@ public class GameManager : MonoBehaviour
         gasolina -= Time.deltaTime; 
     }
 
-    void GasPickUpSpawn()
+    public void GasPickUpSpawn()
     {
         if (sectionsToGas == gasSection)
         {
-            sectionsToGas = 0;
+            
             //Acceder a la lista de Section y acceder al currentRandomIndex
             //Buscar en el hijo del obstaculo definido por randomIndex un objeto con el Tag PickUpSpawnPoint y spawnear un pickup en esa posicion
-            int obstacleNumber;
+            
             obstacleNumber = section.currentRandomIndex;
-            //section.pickPositions[obstacleNumber];
+            Debug.Log("obstacleNum" + obstacleNumber);
+
+            //pickupSpawnPos = section.gasPicks[section.currentRandomIndex].position;
+            section.gasPicks[obstacleNumber].SetActive(true);
+            
+            //Instantiate(gas,pickupSpawnPos, Quaternion.identity);
+            sectionsToGas = 0;
+
+
+
 
         }
     }

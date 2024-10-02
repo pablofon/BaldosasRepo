@@ -44,8 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94caab40cde1ffd4380bef39beffd10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gas: {fileID: 5519582572431619469, guid: 1d1eb3d0decc3224e983f1ce481d039f, type: 3}
   gameCompleted: 0
   gameOver: 0
   sections: 0
+  sectionsToGas: 5
+  gasSection: 0
+  totalSections: 0
+  sectionsCompleted: 0
   coins: 0
   gasolina: 30
