@@ -640,6 +640,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8864568899232805408, guid: 9aeb727d3f8024b4a8ad96cbc07a5223,
+        type: 3}
+      propertyPath: gasPicks.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864568899232805408, guid: 9aeb727d3f8024b4a8ad96cbc07a5223,
+        type: 3}
+      propertyPath: gasPicks.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -906,7 +916,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: (20000000)
+  m_text: (00000000)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff4c4749a718379458047b0710d89882, type: 2}
   m_sharedMaterial: {fileID: 1928459163357994959, guid: ff4c4749a718379458047b0710d89882,
