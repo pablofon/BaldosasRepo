@@ -9,6 +9,7 @@ TagManager:
   - PickUpSpawnPoint
   - LeftWall
   - RightWall
+  - Ramp
   layers:
   - Default
   - TransparentFX

@@ -171,7 +171,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.CompareTag("Ramp"))
+        {
+            //rb.AddForce(Vector3.up * 3, ForceMode.Impulse);
+        }
         
         if (collision.gameObject.CompareTag("RightWall"))
         {
