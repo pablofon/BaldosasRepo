@@ -157,6 +157,7 @@ public class PlayerController : MonoBehaviour
                 {
                     //Es un tap
                     Debug.Log("Just a Tap");
+                    animator.SetTrigger("Tap");
                     rb.velocity = Vector3.zero;
                     return;                }
             }
