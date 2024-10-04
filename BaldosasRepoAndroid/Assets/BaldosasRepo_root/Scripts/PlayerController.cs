@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]Camera cam;
+    Vector3 camOriginPos;
     Rigidbody rb;
     Animator animator;
     Section section;
@@ -35,7 +37,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         section = FindObjectOfType<Section>();
-
+        camOriginPos = cam.transform.position;
         //targetPosition = positions[1].position;
         //transform.position = positions[1].position;
         //onLeft = false;
@@ -163,6 +165,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        cam.transform.position = new Vector3(0,transform.position.y+camOriginPos.y,camOriginPos.z); //La camara sigue al player en el eje y 
         //if(rb.velocity.x > 0)
     }
 
