@@ -7,7 +7,10 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody rb;
     Animator animator;
-    
+    Section section;
+    [SerializeField]ParticleSystem leftSparks;
+    [SerializeField] ParticleSystem rightSparks;
+
     private Vector3 fp; //first touch pos
     private Vector3 lp; //last touch pos
     private float dragDistance; // distancia minima para swipe
@@ -31,10 +34,12 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        targetPosition = positions[1].position;
-        transform.position = positions[1].position;
-        onLeft = false;
-        onRight = false;
+        section = FindObjectOfType<Section>();
+
+        //targetPosition = positions[1].position;
+        //transform.position = positions[1].position;
+        //onLeft = false;
+        //onRight = false;
 
         //targetPosition = centerPosition.position;
         isMoving = false;
@@ -44,6 +49,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -154,6 +160,34 @@ public class PlayerController : MonoBehaviour
                     rb.velocity = Vector3.zero;
                     return;                }
             }
+        }
+
+        //if(rb.velocity.x > 0)
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        
+        if (collision.gameObject.CompareTag("RightWall"))
+        {
+            rightSparks.gameObject.SetActive(true);
+        }
+        if (collision.gameObject.CompareTag("LeftWall"))
+        {
+            leftSparks.gameObject.SetActive(true);
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("RightWall"))
+        {
+            rightSparks.gameObject.SetActive(false);
+        }
+        if (collision.gameObject.CompareTag("LeftWall"))
+        {
+            leftSparks.gameObject.SetActive(false);
         }
     }
 }

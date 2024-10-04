@@ -7,6 +7,8 @@ TagManager:
   - Obstacle
   - Section
   - PickUpSpawnPoint
+  - LeftWall
+  - RightWall
   layers:
   - Default
   - TransparentFX

@@ -363,6 +363,7 @@ MonoBehaviour:
   speed: 40
   sectionSize: 50
   currentRandomIndex: 0
+  finishLineAppear: 0
 --- !u!1 &6676829665617880217
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1396591155468751194
 Transform:
   m_ObjectHideFlags: 0
