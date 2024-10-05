@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
     {
         if (toRightCurve)
         {
-            currentCurve += 0.0000001f;
+            currentCurve += 0.0000005f;
             curvedMat.SetFloat("_SidewaysStrenght", currentCurve);
             if (currentCurve >= maxCurve)
             {
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
         }
         else if (!toRightCurve)
         {
-            currentCurve -= 0.0000001f;
+            currentCurve -= 0.0000005f;
             curvedMat.SetFloat("_SidewaysStrenght", currentCurve);
             if (currentCurve <= minCurve)
             {
