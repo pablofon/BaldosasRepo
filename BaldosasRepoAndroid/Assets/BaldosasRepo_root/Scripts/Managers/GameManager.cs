@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] Material curvedMat;
-    [SerializeField] Material curvedGasMat;
+    //[SerializeField] Material curvedGasMat;
     float minCurve = -0.002f;
     float maxCurve = 0.002f;
     [SerializeField] float currentCurve = 0f;
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         gameOver = false;
         section = FindObjectOfType<Section>();
         curvedMat.SetFloat("_SidewaysStrenght", currentCurve);
-        curvedGasMat.SetFloat("_SidewaysStrenght", currentCurve);
+        //curvedGasMat.SetFloat("_SidewaysStrenght", currentCurve);
 
 
     }
@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
         {
             currentCurve += 0.0000005f;
             curvedMat.SetFloat("_SidewaysStrenght", currentCurve);
-            curvedGasMat.SetFloat("_SidewaysStrenght", currentCurve);
+            //curvedGasMat.SetFloat("_SidewaysStrenght", currentCurve);
             
             if (currentCurve >= maxCurve)
             {
@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
         {
             currentCurve -= 0.0000005f;
             curvedMat.SetFloat("_SidewaysStrenght", currentCurve);
-            curvedGasMat.SetFloat("_SidewaysStrenght", currentCurve);
+            //curvedGasMat.SetFloat("_SidewaysStrenght", currentCurve);
             if (currentCurve <= minCurve)
             {
                 toRightCurve = true;
