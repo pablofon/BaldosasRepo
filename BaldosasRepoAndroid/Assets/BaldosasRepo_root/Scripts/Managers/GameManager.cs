@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] Material curvedMat;
+    [SerializeField] Material curvedGasMat;
     float minCurve = -0.002f;
     float maxCurve = 0.002f;
     [SerializeField] float currentCurve = 0f;
@@ -61,7 +62,10 @@ public class GameManager : MonoBehaviour
         gameCompleted = false;
         gameOver = false;
         section = FindObjectOfType<Section>();
-        
+        curvedMat.SetFloat("_SidewaysStrenght", currentCurve);
+        curvedGasMat.SetFloat("_SidewaysStrenght", currentCurve);
+
+
     }
 
     private void Update()
@@ -96,6 +100,8 @@ public class GameManager : MonoBehaviour
         {
             currentCurve += 0.0000005f;
             curvedMat.SetFloat("_SidewaysStrenght", currentCurve);
+            curvedGasMat.SetFloat("_SidewaysStrenght", currentCurve);
+            
             if (currentCurve >= maxCurve)
             {
                 toRightCurve = false;
@@ -106,6 +112,7 @@ public class GameManager : MonoBehaviour
         {
             currentCurve -= 0.0000005f;
             curvedMat.SetFloat("_SidewaysStrenght", currentCurve);
+            curvedGasMat.SetFloat("_SidewaysStrenght", currentCurve);
             if (currentCurve <= minCurve)
             {
                 toRightCurve = true;
@@ -132,11 +139,7 @@ public class GameManager : MonoBehaviour
             
             obstacleNumber = section.currentRandomIndex;
             Debug.Log("obstacleNum" + obstacleNumber);
-
-            //pickupSpawnPos = section.gasPicks[section.currentRandomIndex].position;
             section.gasPicks[obstacleNumber].SetActive(true);
-            
-            //Instantiate(gas,pickupSpawnPos, Quaternion.identity);
             sectionsToGas = 0;
 
 
