@@ -204,6 +204,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1929068452097386254, guid: 1a7a68b9cfe9bab43bbfde8700628656,
         type: 3}
+      propertyPath: curvedMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 96dbbeda78a3c2f44accdf0a6a45e4a3, type: 2}
+    - target: {fileID: 1929068452097386254, guid: 1a7a68b9cfe9bab43bbfde8700628656,
+        type: 3}
       propertyPath: gasSection
       value: 5
       objectReference: {fileID: 0}

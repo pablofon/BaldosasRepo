@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] Material curvedMat;
+    float minCurve = -0.002f;
+    float maxCurve = 0.002f;
+    [SerializeField] float currentCurve = 0f;
+    [SerializeField] bool toRightCurve = true;
+
     Section section;
     public int obstacleNumber;
     Vector3 pickupSpawnPos;
@@ -78,8 +84,39 @@ public class GameManager : MonoBehaviour
         }
 
         GasPickUpSpawn();
+        EnvironmentCurvature();
+
+
+
     }
 
+    void EnvironmentCurvature()
+    {
+        if (toRightCurve)
+        {
+            currentCurve += 0.0000001f;
+            curvedMat.SetFloat("_SidewaysStrenght", currentCurve);
+            if (currentCurve >= maxCurve)
+            {
+                toRightCurve = false;
+                minCurve = Random.Range(0f,-.002f);
+            }
+        }
+        else if (!toRightCurve)
+        {
+            currentCurve -= 0.0000001f;
+            curvedMat.SetFloat("_SidewaysStrenght", currentCurve);
+            if (currentCurve <= minCurve)
+            {
+                toRightCurve = true;
+                maxCurve = Random.Range(0f, .002f);
+            }
+        }
+        
+        
+
+    }
+    
     void GasDown()
     {
         gasolina -= Time.deltaTime; 
