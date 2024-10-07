@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -171,6 +172,7 @@ public class PlayerController : MonoBehaviour
         }
 
         cam.transform.position = new Vector3(0,transform.position.y+camOriginPos.y,camOriginPos.z); //La camara sigue al player en el eje y 
+        
         if(chocado == true)
         {
             slowMo();
@@ -181,14 +183,14 @@ public class PlayerController : MonoBehaviour
     {
 
       
-        obstaclesInScene = FindObjectsOfType<Section>();
+        obstaclesInScene = FindObjectsOfType<Section>(); //Pilla todos los scripts Section de la escena
         for (int i = 0; i < obstaclesInScene.Length; i++)
         {
             GameObject obj = obstaclesInScene[i].gameObject;
 
-            obj.GetComponent<Section>().maxSpeed = 30f;
+            obj.GetComponent<Section>().maxSpeed = 30f; //Les baja la velocidad a todos 
 
-            Invoke("EndSlowMo",1f);
+            Invoke("EndSlowMo",1f); //Devuelve la velocidad
         }
 
     }
@@ -219,30 +221,11 @@ public class PlayerController : MonoBehaviour
 
             chocado = true;
 
-
-            /*
-            foreach (GameObject obj in transform)
-            {
-                if (obj.tag == "Obstacle")
-                {
-                    obj.gameObject.GetComponent<Section>().maxSpeed = 20;
-
-                }
-            }
-
-            for (int i = 0; i < section.obstacles.Count; i++)
-        {
-            GameObject obj = section.obstacles[i].gameObject;
-
-            obj.GetComponent<Section>().maxSpeed = 0f;
-
-        }
-            */
-            //section.maxSpeed = 20;
         }
         if (collision.gameObject.CompareTag("LeftWall"))
         {
             leftSparks.gameObject.SetActive(true);
+            chocado = true;
         }
     }
 
