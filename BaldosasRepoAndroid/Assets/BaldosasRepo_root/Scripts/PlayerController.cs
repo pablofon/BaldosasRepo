@@ -180,25 +180,30 @@ public class PlayerController : MonoBehaviour
     void slowMo()
     {
 
-        /*
-        foreach (Transform obj in transform)
-        {
-            if (obj.tag == "Obstacle")
-            {
-                obj.gameObject.GetComponent<Section>().maxSpeed = 20;
-
-            }
-        }
-        */
+      
         obstaclesInScene = FindObjectsOfType<Section>();
         for (int i = 0; i < obstaclesInScene.Length; i++)
         {
             GameObject obj = obstaclesInScene[i].gameObject;
 
-            obj.GetComponent<Section>().maxSpeed = 10f;
+            obj.GetComponent<Section>().maxSpeed = 30f;
 
+            Invoke("EndSlowMo",1f);
         }
 
+    }
+
+    void EndSlowMo()
+    {
+        chocado = false;
+        for (int i = 0; i < obstaclesInScene.Length; i++)
+        {
+            GameObject obj = obstaclesInScene[i].gameObject;
+
+            obj.GetComponent<Section>().maxSpeed = 40f;
+
+            
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
