@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]ParticleSystem leftSparks;
     [SerializeField] ParticleSystem rightSparks;
 
+    
     private Vector3 fp; //first touch pos
     private Vector3 lp; //last touch pos
     private float dragDistance; // distancia minima para swipe
@@ -29,6 +30,10 @@ public class PlayerController : MonoBehaviour
 
     private bool isMoving;
     [SerializeField]public float lanesDistance;
+
+    
+    bool chocado;
+    public Component[] obstaclesInScene;
 
 
     // Start is called before the first frame update
@@ -166,7 +171,34 @@ public class PlayerController : MonoBehaviour
         }
 
         cam.transform.position = new Vector3(0,transform.position.y+camOriginPos.y,camOriginPos.z); //La camara sigue al player en el eje y 
-        //if(rb.velocity.x > 0)
+        if(chocado == true)
+        {
+            slowMo();
+        }
+    }
+
+    void slowMo()
+    {
+
+        /*
+        foreach (Transform obj in transform)
+        {
+            if (obj.tag == "Obstacle")
+            {
+                obj.gameObject.GetComponent<Section>().maxSpeed = 20;
+
+            }
+        }
+        */
+        obstaclesInScene = FindObjectsOfType<Section>();
+        for (int i = 0; i < obstaclesInScene.Length; i++)
+        {
+            GameObject obj = obstaclesInScene[i].gameObject;
+
+            obj.GetComponent<Section>().maxSpeed = 10f;
+
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -179,6 +211,29 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("RightWall"))
         {
             rightSparks.gameObject.SetActive(true);
+
+            chocado = true;
+
+
+            /*
+            foreach (GameObject obj in transform)
+            {
+                if (obj.tag == "Obstacle")
+                {
+                    obj.gameObject.GetComponent<Section>().maxSpeed = 20;
+
+                }
+            }
+
+            for (int i = 0; i < section.obstacles.Count; i++)
+        {
+            GameObject obj = section.obstacles[i].gameObject;
+
+            obj.GetComponent<Section>().maxSpeed = 0f;
+
+        }
+            */
+            //section.maxSpeed = 20;
         }
         if (collision.gameObject.CompareTag("LeftWall"))
         {
