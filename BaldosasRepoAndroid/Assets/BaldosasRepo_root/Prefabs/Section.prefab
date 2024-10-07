@@ -2278,6 +2278,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PickUpSpawnPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 5519582572431619469, guid: 1d1eb3d0decc3224e983f1ce481d039f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2371,6 +2376,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: PickUpSpawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519582572431619469, guid: 1d1eb3d0decc3224e983f1ce481d039f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2471,6 +2481,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: PickUpSpawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519582572431619469, guid: 1d1eb3d0decc3224e983f1ce481d039f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2582,6 +2597,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PickUpSpawnPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 5519582572431619469, guid: 1d1eb3d0decc3224e983f1ce481d039f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2682,6 +2702,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PickUpSpawnPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 5519582572431619469, guid: 1d1eb3d0decc3224e983f1ce481d039f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2781,6 +2806,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: PickUpSpawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519582572431619469, guid: 1d1eb3d0decc3224e983f1ce481d039f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
