@@ -130,7 +130,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!1 &482596685129440548
@@ -368,7 +368,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!1 &1141472244089512197
@@ -609,7 +609,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!1 &3416440194263394270
@@ -742,7 +742,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!1 &4577525700443708786
@@ -1194,7 +1194,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!1 &5902647909298957856
@@ -1433,7 +1433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &724317238768666696
 Transform:
   m_ObjectHideFlags: 0
@@ -1653,7 +1653,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!1 &8102603227773995529
@@ -1890,7 +1890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6775626237152686304
 Transform:
   m_ObjectHideFlags: 0
@@ -2504,6 +2504,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4620520967805456035, guid: 1d1eb3d0decc3224e983f1ce481d039f,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620520967805456035, guid: 1d1eb3d0decc3224e983f1ce481d039f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620520967805456035, guid: 1d1eb3d0decc3224e983f1ce481d039f,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.143432
       objectReference: {fileID: 0}
@@ -2515,7 +2525,7 @@ PrefabInstance:
     - target: {fileID: 4620520967805456035, guid: 1d1eb3d0decc3224e983f1ce481d039f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.23
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 4620520967805456035, guid: 1d1eb3d0decc3224e983f1ce481d039f,
         type: 3}
