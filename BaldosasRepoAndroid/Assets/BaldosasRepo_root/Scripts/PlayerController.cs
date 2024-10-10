@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 fp; //first touch pos
     private Vector3 lp; //last touch pos
     private float dragDistance; // distancia minima para swipe
-
+    float impulseForce;
     [SerializeField] Transform[] positions;
 
     //[SerializeField] Transform leftPosition;
@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
         //onRight = false;
 
         //targetPosition = centerPosition.position;
+        impulseForce = 300f;
         isMoving = false;
         dragDistance = Screen.height * 15 / 100; //Distancia del sweep
     }
@@ -92,7 +93,7 @@ public class PlayerController : MonoBehaviour
 
                             if (transform.position.x < 2.9f)
                             {
-                                rb.AddForce(Vector3.right * 300, ForceMode.Force);
+                                rb.AddForce(Vector3.right * impulseForce, ForceMode.Force);
                             }
 
                             //float dist = Vector3.Distance(transform.position, positions[2].position);
@@ -124,7 +125,7 @@ public class PlayerController : MonoBehaviour
 
                             if (transform.position.x > -2.9f)
                             {
-                                rb.AddForce(Vector3.left * 300, ForceMode.Force);
+                                rb.AddForce(Vector3.left * impulseForce, ForceMode.Force);
                             }
                             //LEFT SWEEP
                             Debug.Log("Left");
@@ -215,6 +216,9 @@ public class PlayerController : MonoBehaviour
     public void dead()
     {
         animator.SetTrigger("Dead");
+        impulseForce = 0f;
+        chocado = false;
+
     }
     private void OnCollisionEnter(Collision collision)
     {

@@ -51,7 +51,7 @@ public class PoliceControllet : MonoBehaviour
         {
 
             playerController.dead();
-            playerController.chocado = false;
+            
         }
 
         targetPos = new Vector3(player.transform.position.x, player.transform.position.y, currentPos);
