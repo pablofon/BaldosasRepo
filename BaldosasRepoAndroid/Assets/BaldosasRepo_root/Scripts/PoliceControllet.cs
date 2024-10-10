@@ -46,6 +46,14 @@ public class PoliceControllet : MonoBehaviour
             i = 2;
             playerController.rampeado = false;
         }
+
+        if (playerController.chocado == true && currentPos == positions[0])
+        {
+
+            playerController.dead();
+            playerController.chocado = false;
+        }
+
         targetPos = new Vector3(player.transform.position.x, player.transform.position.y, currentPos);
 
         transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, .3f);

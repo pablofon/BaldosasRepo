@@ -211,6 +211,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    public void dead()
+    {
+        animator.SetTrigger("Dead");
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ramp"))
