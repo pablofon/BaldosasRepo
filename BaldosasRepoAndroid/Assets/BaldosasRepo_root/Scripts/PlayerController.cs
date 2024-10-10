@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     
     public bool chocado;
     public bool rampeado;
+    bool isDead;
     public Component[] obstaclesInScene;
 
 
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour
         impulseForce = 300f;
         isMoving = false;
         dragDistance = Screen.height * 15 / 100; //Distancia del sweep
+        isDead = false;
     }
 
     // Update is called once per frame
@@ -205,8 +207,8 @@ public class PlayerController : MonoBehaviour
         for (int i = 0; i < obstaclesInScene.Length; i++)
         {
             GameObject obj = obstaclesInScene[i].gameObject;
-
-            obj.GetComponent<Section>().maxSpeed = 40f;
+            if (isDead == false) { obj.GetComponent<Section>().maxSpeed = 40f; }
+            
 
             
         }
@@ -218,6 +220,17 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("Dead");
         impulseForce = 0f;
         chocado = false;
+        isDead=true;
+
+        obstaclesInScene = FindObjectsOfType<Section>(); //Pilla todos los scripts Section de la escena
+        for (int i = 0; i < obstaclesInScene.Length; i++)
+        {
+            GameObject obj = obstaclesInScene[i].gameObject;
+
+            obj.GetComponent<Section>().maxSpeed = 0f; //Les baja la velocidad a todos 
+
+            //Invoke("EndSlowMo", 1f); //Devuelve la velocidad
+        }
 
     }
     private void OnCollisionEnter(Collision collision)

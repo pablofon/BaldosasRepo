@@ -27,8 +27,6 @@ public class Section : MonoBehaviour
             {
                 obstacles.Add(child.gameObject);
 
-                
-
             }   
         }
 
