@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    PoliceControllet policeController;
     [SerializeField]Camera cam;
     Vector3 camOriginPos;
     Rigidbody rb;
@@ -34,12 +35,14 @@ public class PlayerController : MonoBehaviour
 
     
     public bool chocado;
+    public bool rampeado;
     public Component[] obstaclesInScene;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        policeController = FindObjectOfType<PoliceControllet>();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         section = FindObjectOfType<Section>();
@@ -213,6 +216,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ramp"))
         {
             rb.AddForce(Vector3.up * 4, ForceMode.Impulse);
+            rampeado = true;
         }
         
         if (collision.gameObject.CompareTag("RightWall"))
