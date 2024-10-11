@@ -194,7 +194,7 @@ public class PlayerController : MonoBehaviour
         {
             GameObject obj = obstaclesInScene[i].gameObject;
 
-            obj.GetComponent<Section>().maxSpeed = 30f; //Les baja la velocidad a todos 
+            //obj.GetComponent<Section>().maxSpeed = 30f; //Les baja la velocidad a todos 
 
             Invoke("EndSlowMo",1f); //Devuelve la velocidad
         }
@@ -208,7 +208,7 @@ public class PlayerController : MonoBehaviour
         for (int i = 0; i < obstaclesInScene.Length; i++)
         {
             GameObject obj = obstaclesInScene[i].gameObject;
-            if (isDead == false) { obj.GetComponent<Section>().maxSpeed = 40f; }
+            //if (isDead == false) { obj.GetComponent<Section>().maxSpeed = 40f; }
 
         }
     }
