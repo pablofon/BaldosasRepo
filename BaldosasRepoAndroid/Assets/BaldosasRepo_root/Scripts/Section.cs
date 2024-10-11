@@ -42,9 +42,10 @@ public class Section : MonoBehaviour
         if(transform.position.z <= -sectionSize) //Si sale por detrás
         {
             transform.Translate(Vector3.forward * sectionSize * sectionCount); //La manda al final 
+            EnableRandomObstacle();
             GameManager.Instance.sections += 1; //El GameManager cuenta cuantas secciones se han superado
             GameManager.Instance.sectionsToGas += 1; //Tambien cuenta las secciones para que aparezca la gasolina
-            EnableRandomObstacle();
+            
         }
     }
 

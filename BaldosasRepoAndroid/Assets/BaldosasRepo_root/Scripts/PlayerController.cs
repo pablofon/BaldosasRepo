@@ -204,13 +204,12 @@ public class PlayerController : MonoBehaviour
     void EndSlowMo()
     {
         chocado = false;
+        obstaclesInScene = FindObjectsOfType<Section>(); //Pilla todos los scripts Section de la escena
         for (int i = 0; i < obstaclesInScene.Length; i++)
         {
             GameObject obj = obstaclesInScene[i].gameObject;
             if (isDead == false) { obj.GetComponent<Section>().maxSpeed = 40f; }
-            
 
-            
         }
     }
 
@@ -221,6 +220,7 @@ public class PlayerController : MonoBehaviour
         impulseForce = 0f;
         chocado = false;
         isDead=true;
+
 
         obstaclesInScene = FindObjectsOfType<Section>(); //Pilla todos los scripts Section de la escena
         for (int i = 0; i < obstaclesInScene.Length; i++)
