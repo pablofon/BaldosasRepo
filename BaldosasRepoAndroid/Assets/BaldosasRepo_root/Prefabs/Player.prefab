@@ -9952,6 +9952,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   lanesDistance: 2
+  chocado: 0
+  rampeado: 0
   obstaclesInScene: []
 --- !u!114 &9210840318585683638
 MonoBehaviour:

@@ -198,7 +198,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8659333919713343688}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3352508621165556161, guid: 8af37b5d79b34a842aa2993f049825cc,
+          type: 3}
+        m_TargetAssemblyTypeName: LoadManager, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1986291764666582735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,7 +1086,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6508631068864686167}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3352508621165556161, guid: 8af37b5d79b34a842aa2993f049825cc,
+          type: 3}
+        m_TargetAssemblyTypeName: LoadManager, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4254841016885322348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1409,7 +1435,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1712367755588641803}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3352508621165556161, guid: 8af37b5d79b34a842aa2993f049825cc,
+          type: 3}
+        m_TargetAssemblyTypeName: LoadManager, Assembly-CSharp
+        m_MethodName: SceneLoader
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5620566735001553444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,7 +1691,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7679596999138291245}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3352508621165556161, guid: 8af37b5d79b34a842aa2993f049825cc,
+          type: 3}
+        m_TargetAssemblyTypeName: LoadManager, Assembly-CSharp
+        m_MethodName: SceneLoader
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6069455268949766727
 GameObject:
   m_ObjectHideFlags: 0
