@@ -19,6 +19,10 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    [Header("UI References")]
+    [SerializeField] GameObject winPanel;
+    [SerializeField] GameObject gameOverPanel;
+
     private void Awake()
     {
         if (instance == null)
@@ -35,12 +39,29 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        
+        winPanel.SetActive(false);
+        gameOverPanel.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (GameManager.Instance.gameCompleted)
+        {
+            winPanel.SetActive(true);
+        }
+        else
+        {
+            winPanel.SetActive(false);
+        }
+
+        if (GameManager.Instance.gameOver)
+        {
+            gameOverPanel.SetActive(true);
+        }
+        else
+        {
+            gameOverPanel.SetActive(false);
+        }
     }
 }
