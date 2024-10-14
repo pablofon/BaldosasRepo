@@ -12,8 +12,14 @@ EditorBuildSettings:
     path: Assets/BaldosasRepo_root/Scenes/PabloScene.unity
     guid: 71430e2aec3a73240a5dc64396a64f4c
   - enabled: 1
+    path: Assets/BaldosasRepo_root/Scenes/MainMenu.unity
+    guid: 985d4500b3cbc3443ac9f2469e441033
+  - enabled: 1
     path: Assets/BaldosasRepo_root/Scenes/AbelScene.unity
     guid: b2b28263daa5e9b44a6092c0cca9643d
+  - enabled: 1
+    path: Assets/BaldosasRepo_root/Scenes/Level_2.unity
+    guid: 2dffb5721da9ce546930e5aff5c68847
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 239d90772756c834893ec4f8a03f499a,
       type: 2}
