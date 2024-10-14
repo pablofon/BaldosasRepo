@@ -233,6 +233,8 @@ public class PlayerController : MonoBehaviour
             //Invoke("EndSlowMo", 1f); //Devuelve la velocidad
         }
 
+        GameManager.Instance.gameOver = true;
+
     }
     private void OnCollisionEnter(Collision collision)
     {

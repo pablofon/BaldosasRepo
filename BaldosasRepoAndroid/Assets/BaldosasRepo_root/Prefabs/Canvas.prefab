@@ -1439,7 +1439,7 @@ MonoBehaviour:
       - m_Target: {fileID: 3352508621165556161, guid: 8af37b5d79b34a842aa2993f049825cc,
           type: 3}
         m_TargetAssemblyTypeName: LoadManager, Assembly-CSharp
-        m_MethodName: SceneLoader
+        m_MethodName: GemReseter
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

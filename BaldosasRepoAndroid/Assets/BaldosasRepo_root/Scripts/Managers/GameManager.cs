@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     [Header("Game Stats")]
     public int coins; //Monedas
     public float gasolina; //Gasolina (tiempo) que le queda al player
+    public float gasolinaInicial;
 
 
     private void Awake()
@@ -91,7 +92,7 @@ public class GameManager : MonoBehaviour
         GasPickUpSpawn();
         EnvironmentCurvature();
 
-
+        if (gameCompleted) { gameOver = false; }
 
     }
 

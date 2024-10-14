@@ -13,11 +13,12 @@ public class LoadManager : MonoBehaviour
         GameManager.Instance.gameOver = false;
     }
 
-    public void MainMenuSceneLoader(int sceneToLoad)
+    public void GemReseter(int sceneToLoad)
     {
         SceneManager.LoadScene(sceneToLoad);
         GameManager.Instance.gameCompleted = false;
         GameManager.Instance.gameOver = false;
+        GameManager.Instance.gasolina = GameManager.Instance.gasolinaInicial;
     }
 
     public void ExitGame()
