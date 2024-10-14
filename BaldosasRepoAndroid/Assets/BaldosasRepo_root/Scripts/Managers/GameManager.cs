@@ -93,6 +93,8 @@ public class GameManager : MonoBehaviour
         EnvironmentCurvature();
 
         if (gameCompleted) { gameOver = false; }
+        if (gameOver) { gameCompleted = false; }
+
 
     }
 

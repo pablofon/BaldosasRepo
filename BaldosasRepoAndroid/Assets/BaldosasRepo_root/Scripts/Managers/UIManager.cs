@@ -6,6 +6,7 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
+    /*
     private static UIManager instance;
     public static UIManager Instance
     {
@@ -17,12 +18,12 @@ public class UIManager : MonoBehaviour
             }
             return instance;
         }
-    }
+    }*/
 
     [Header("UI References")]
     [SerializeField] GameObject winPanel;
     [SerializeField] GameObject gameOverPanel;
-
+    /*
     private void Awake()
     {
         if (instance == null)
@@ -35,7 +36,7 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-    }
+    }*/
 
     void Start()
     {

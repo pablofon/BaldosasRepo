@@ -12,7 +12,7 @@ public class Section : MonoBehaviour
     [SerializeField] float sectionSize;
     private static int lastRandomIndex = -1; //Es ESTÁTICA para poder compartir la variable entre todas las instancias de section y evitar que cada instancia tenga su variable lastRandomIndex
     public int currentRandomIndex;
-    [SerializeField] bool finishLineAppear = false;
+    public bool finishLineAppear = false;
 
     // Start is called before the first frame update
     void Start()
