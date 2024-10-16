@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         curvedMat.SetFloat("_SidewaysStrenght", currentCurve);
         //curvedGasMat.SetFloat("_SidewaysStrenght", currentCurve);
         
-
+        sectionsCompleted = false;
 
     }
 
