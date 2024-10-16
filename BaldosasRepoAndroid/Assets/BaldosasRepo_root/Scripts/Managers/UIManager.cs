@@ -23,6 +23,9 @@ public class UIManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] GameObject winPanel;
     [SerializeField] GameObject gameOverPanel;
+    float currentGas;
+    [SerializeField] TMP_Text gasText;
+    
     /*
     private void Awake()
     {
@@ -47,6 +50,8 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        currentGas = GameManager.Instance.gasolina;
+        
         if (GameManager.Instance.gameCompleted)
         {
             winPanel.SetActive(true);
@@ -64,5 +69,7 @@ public class UIManager : MonoBehaviour
         {
             gameOverPanel.SetActive(false);
         }
+
+        gasText.text = currentGas.ToString();
     }
 }

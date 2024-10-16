@@ -144,6 +144,7 @@ public class GameManager : MonoBehaviour
             obstacleNumber = section.currentRandomIndex;
             Debug.Log("obstacleNum" + obstacleNumber);
             section.gasPicks[obstacleNumber].SetActive(true);
+            
             sectionsToGas = 0;
 
 
