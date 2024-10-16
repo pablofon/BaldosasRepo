@@ -240,7 +240,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ramp"))
         {
-            rb.AddForce(Vector3.up/4, ForceMode.Impulse);
+            //rb.AddForce(Vector3.up/4, ForceMode.Impulse);
             rampeado = true;
         }
         
