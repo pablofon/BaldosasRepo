@@ -34,8 +34,8 @@ public class GameManager : MonoBehaviour
     public bool gameOver = false;
     public int sections = 0; //Secciones que el player ha pasado
     public int sectionsToGas;
-    [SerializeField] int gasSection; //si sectionToGas = gasSection -> spawnea el pickup de gasolina
-    [SerializeField] int totalSections; //Secciones que el jugador tiene que pasar para completar el nivel
+    public int gasSection; //si sectionToGas = gasSection -> spawnea el pickup de gasolina
+    public int totalSections; //Secciones que el jugador tiene que pasar para completar el nivel
     public bool sectionsCompleted = false;
 
     [Header("Game Stats")]

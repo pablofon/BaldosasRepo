@@ -14,6 +14,8 @@ public class LoadManager : MonoBehaviour
         GameManager.Instance.sectionsCompleted = false;
         GameManager.Instance.sections = 0;
         GameManager.Instance.gasolina = GameManager.Instance.gasolinaInicial;
+        GameManager.Instance.totalSections += 10;
+        GameManager.Instance.gasSection += 2;
     }
 
     public void GemReseter(int sceneToLoad)
