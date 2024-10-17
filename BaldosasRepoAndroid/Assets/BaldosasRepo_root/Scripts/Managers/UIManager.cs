@@ -92,7 +92,7 @@ public class UIManager : MonoBehaviour
         {
             pausePanel.SetActive(false);
             isPaused = false;
-            playerController.impulseForce = 300f;
+            playerController.impulseForce = playerController.initImpulseForce;
             Time.timeScale = 1f;
         }
         

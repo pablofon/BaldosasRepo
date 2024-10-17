@@ -1570,6 +1570,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winPanel: {fileID: 2050044148380787029}
   gameOverPanel: {fileID: 4254841016885322348}
+  pausePanel: {fileID: 1101927175791497273}
+  gasText: {fileID: 1677852984393986229}
+  isPaused: 0
 --- !u!1 &5731950264524428616
 GameObject:
   m_ObjectHideFlags: 0

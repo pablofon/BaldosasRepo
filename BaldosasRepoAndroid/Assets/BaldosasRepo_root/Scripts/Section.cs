@@ -14,6 +14,7 @@ public class Section : MonoBehaviour
     public int currentRandomIndex;
     public bool finishLineAppear = false;
     bool initRandom = false;
+    EnviroManager enviroManager;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,8 @@ public class Section : MonoBehaviour
         maxSpeed = speed;
         sectionCount = GameObject.FindGameObjectsWithTag("Section").Length;
         obstacles = new List<GameObject>(); 
+        enviroManager = FindObjectOfType<EnviroManager>();
+        
         
         foreach (Transform child in transform)
         {
@@ -31,7 +34,7 @@ public class Section : MonoBehaviour
 
             }   
         }
-
+        
         //EnableRandomObstacle();
         
     }
@@ -40,6 +43,21 @@ public class Section : MonoBehaviour
 
     void Update()
     {
+        obstacles = new List<GameObject>();
+
+
+        foreach (Transform child in transform)
+        {
+            if (child.tag == "Obstacle")
+            {
+                obstacles.Add(child.gameObject);
+                obstacles[0].SetActive(true);
+
+            }
+        }
+
+
+
         transform.Translate(Vector3.back * maxSpeed * Time.deltaTime); // Avanza el escenario hacia atras
 
         if(transform.position.z <= -sectionSize) //Si sale por detrás
@@ -50,6 +68,7 @@ public class Section : MonoBehaviour
             GameManager.Instance.sectionsToGas += 1; //Tambien cuenta las secciones para que aparezca la gasolina
             
         }
+
     }
 
     public void EnableRandomObstacle()
@@ -69,6 +88,7 @@ public class Section : MonoBehaviour
         }
         lastRandomIndex = randomIndex; //igualamos lastRandomIndex con randomIndex actual. Así cuando vuelva a pedir un randomIndex evita repetir (Repite el while hasta que da otro numero.)
         currentRandomIndex = randomIndex;
+        enviroManager.currentSection = currentRandomIndex;
 
         if (GameManager.Instance.sectionsCompleted == false)    //Si no se ha completado la carrera
         {

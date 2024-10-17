@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] bool toRightCurve = true;
 
     Section section;
+    
     public int obstacleNumber;
     Vector3 pickupSpawnPos;
     [SerializeField] GameObject gas;
@@ -89,7 +90,7 @@ public class GameManager : MonoBehaviour
             sectionsCompleted = false;
         }
 
-        GasPickUpSpawn();
+        //GasPickUpSpawn();
         EnvironmentCurvature();
 
         if (gameCompleted) { gameOver = false; }

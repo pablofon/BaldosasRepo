@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 lp; //last touch pos
     private float dragDistance; // distancia minima para swipe
     public float impulseForce;
+    public float initImpulseForce;
     [SerializeField] Transform[] positions;
 
     //[SerializeField] Transform leftPosition;
@@ -54,7 +55,8 @@ public class PlayerController : MonoBehaviour
         //onRight = false;
 
         //targetPosition = centerPosition.position;
-        impulseForce = 300f;
+        impulseForce = 350f;
+        initImpulseForce = impulseForce;
         isMoving = false;
         dragDistance = Screen.height * 15 / 100; //Distancia del sweep
         isDead = false;
@@ -205,14 +207,15 @@ public class PlayerController : MonoBehaviour
     void EndSlowMo()
     {
         chocado = false;
-        /*obstaclesInScene = FindObjectsOfType<Section>(); //Pilla todos los scripts Section de la escena
+        
+        obstaclesInScene = FindObjectsOfType<Section>(); //Pilla todos los scripts Section de la escena
         for (int i = 0; i < obstaclesInScene.Length; i++)
         {
             GameObject obj = obstaclesInScene[i].gameObject;
-            //if (isDead == false) { obj.GetComponent<Section>().maxSpeed = 40f; }
+            if (isDead == false) { obj.GetComponent<Section>().maxSpeed = 40f; }
 
         }
-        */
+        
     }
 
 
