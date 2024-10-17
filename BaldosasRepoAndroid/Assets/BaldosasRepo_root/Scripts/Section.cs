@@ -13,6 +13,7 @@ public class Section : MonoBehaviour
     private static int lastRandomIndex = -1; //Es ESTÁTICA para poder compartir la variable entre todas las instancias de section y evitar que cada instancia tenga su variable lastRandomIndex
     public int currentRandomIndex;
     public bool finishLineAppear = false;
+    bool initRandom = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +27,13 @@ public class Section : MonoBehaviour
             if (child.tag == "Obstacle")
             {
                 obstacles.Add(child.gameObject);
+                obstacles[0].SetActive(true);
 
             }   
         }
 
-        EnableRandomObstacle();
+        //EnableRandomObstacle();
+        
     }
 
    
@@ -54,6 +57,7 @@ public class Section : MonoBehaviour
         foreach (GameObject obstacle in obstacles)
         {
             obstacle.SetActive(false); //Desactivamos todos los obstaculos
+            //obstacles[0].SetActive(true);
 
         }
 
