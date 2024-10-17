@@ -758,12 +758,18 @@ PrefabInstance:
         type: 3}
       propertyPath: gasPicks.Array.data[4]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 885799032}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9aeb727d3f8024b4a8ad96cbc07a5223, type: 3}
+--- !u!1 &885799032 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 292110030798928109, guid: 9aeb727d3f8024b4a8ad96cbc07a5223,
+    type: 3}
+  m_PrefabInstance: {fileID: 885799031}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &939254869
 GameObject:
   m_ObjectHideFlags: 0
