@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 fp; //first touch pos
     private Vector3 lp; //last touch pos
     private float dragDistance; // distancia minima para swipe
-    float impulseForce;
+    public float impulseForce;
     [SerializeField] Transform[] positions;
 
     //[SerializeField] Transform leftPosition;
@@ -195,7 +195,7 @@ public class PlayerController : MonoBehaviour
         {
             GameObject obj = obstaclesInScene[i].gameObject;
 
-            //obj.GetComponent<Section>().maxSpeed = 30f; //Les baja la velocidad a todos 
+            obj.GetComponent<Section>().maxSpeed = 30f; //Les baja la velocidad a todos 
 
             Invoke("EndSlowMo",1f); //Devuelve la velocidad
         }

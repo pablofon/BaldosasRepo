@@ -23,8 +23,11 @@ public class UIManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] GameObject winPanel;
     [SerializeField] GameObject gameOverPanel;
+    [SerializeField] GameObject pausePanel;
     float currentGas;
     [SerializeField] TMP_Text gasText;
+    [SerializeField]bool isPaused = false;
+    PlayerController playerController;
     
     /*
     private void Awake()
@@ -43,8 +46,10 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
+        playerController = FindObjectOfType<PlayerController>();
         winPanel.SetActive(false);
         gameOverPanel.SetActive(false);
+        pausePanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -70,6 +75,25 @@ public class UIManager : MonoBehaviour
             gameOverPanel.SetActive(false);
         }
 
-        gasText.text = currentGas.ToString();
+        gasText.text = ((int)currentGas).ToString();
     }
+
+    public void ShowPausePanel()
+    {
+        if (!isPaused)
+        {
+            pausePanel.SetActive(true);
+            isPaused = true;
+            playerController.impulseForce = 0f;
+
+        }
+        else
+        {
+            pausePanel.SetActive(false);
+            isPaused = false;
+            playerController.impulseForce = 300f;
+        }
+        
+    }
+    
 }
