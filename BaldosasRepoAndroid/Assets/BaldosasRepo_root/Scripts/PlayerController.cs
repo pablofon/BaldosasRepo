@@ -185,6 +185,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     void slowMo()
     {
 
@@ -255,6 +256,11 @@ public class PlayerController : MonoBehaviour
         {
             leftSparks.gameObject.SetActive(true);
             chocado = true;
+        }
+        
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            dead();
         }
     }
 
