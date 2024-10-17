@@ -85,6 +85,7 @@ public class UIManager : MonoBehaviour
             pausePanel.SetActive(true);
             isPaused = true;
             playerController.impulseForce = 0f;
+            Time.timeScale = 0f;
 
         }
         else
@@ -92,6 +93,7 @@ public class UIManager : MonoBehaviour
             pausePanel.SetActive(false);
             isPaused = false;
             playerController.impulseForce = 300f;
+            Time.timeScale = 1f;
         }
         
     }
