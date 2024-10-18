@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
     
     void GasDown()
     {
-        gasolina -= Time.deltaTime; 
+        gasolina -= Time.deltaTime*1.5f; 
     }
 
     public void GasPickUpSpawn()
