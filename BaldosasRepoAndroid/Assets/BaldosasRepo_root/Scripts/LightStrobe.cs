@@ -8,6 +8,8 @@ public class LightStrobe : MonoBehaviour
     [SerializeField] float maxIntensiy;
     Light luz;
     private bool ended;
+    [SerializeField] float cooldown;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -29,9 +31,9 @@ public class LightStrobe : MonoBehaviour
     {
         ended = false;
         luz.intensity = 0;
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(cooldown);
         luz.intensity = maxIntensiy;
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(cooldown);
         ended = true;
 
 
