@@ -1196,6 +1196,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 844498771965318848, guid: 8553d41eae3c74d4d96630e1c62c0aa4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GemReseter
+      objectReference: {fileID: 0}
     - target: {fileID: 1613467561243782673, guid: 8553d41eae3c74d4d96630e1c62c0aa4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
