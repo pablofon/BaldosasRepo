@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4580080122854840884
 MonoBehaviour:
@@ -48,5 +48,8 @@ MonoBehaviour:
   hasStartMusic: 0
   musicSource: {fileID: 0}
   sfxSource: {fileID: 0}
-  musicList: []
-  sfxList: []
+  musicList:
+  - {fileID: 8300000, guid: 0ea886c9a03fc7149b9a33f3058fec8f, type: 3}
+  sfxList:
+  - {fileID: 8300000, guid: 8a85ec8c3e78acb498da85b2ca847ebb, type: 3}
+  - {fileID: 8300000, guid: 4a79f758c6f104048a9c598ec8af7b3b, type: 3}
