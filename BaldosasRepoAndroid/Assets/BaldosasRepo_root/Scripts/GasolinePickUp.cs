@@ -8,7 +8,7 @@ public class GasolinePickUp : MonoBehaviour
 
     [Header("Gas Stats")]
     [SerializeField] float gasolinaSumada; //Cantidad de gasolina (tiempo) que recupera el player al conseguir el pickup
-    [SerializeField] ParticleSystem part;
+    [SerializeField] GameObject part;
 
     // Start is called before the first frame update
     void Start()
@@ -27,8 +27,15 @@ public class GasolinePickUp : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             GameManager.Instance.gasolina += gasolinaSumada;
-            gameObject.SetActive(false);
-            part.Play();
+            part.SetActive(false);
+            part.SetActive(true);
+            Invoke("ShutDownParticles", 1.5f);
+
         }
+    }
+
+    private void ShutDownParticles()
+    {
+        part.SetActive(false);
     }
 }
