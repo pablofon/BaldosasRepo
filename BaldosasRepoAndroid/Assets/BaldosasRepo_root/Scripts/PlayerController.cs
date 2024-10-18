@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
 
                             if (transform.position.x < 2.9f)
                             {
-                                rb.AddForce(Vector3.right * impulseForce, ForceMode.Force);
+                                rb.AddForce(Vector3.right * (impulseForce-rb.velocity.x/2 + 1), ForceMode.Force);
                             }
 
                             //float dist = Vector3.Distance(transform.position, positions[2].position);
@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
 
                             if (transform.position.x > -2.9f)
                             {
-                                rb.AddForce(Vector3.left * impulseForce, ForceMode.Force);
+                                rb.AddForce(Vector3.left * (impulseForce + rb.velocity.x / 2 + 1), ForceMode.Force);
                             }
                             //LEFT SWEEP
                             Debug.Log("Left");
