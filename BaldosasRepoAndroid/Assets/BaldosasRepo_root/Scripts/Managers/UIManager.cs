@@ -76,7 +76,7 @@ public class UIManager : MonoBehaviour
         }
 
         gasText.text = ((int)currentGas).ToString(); //Texto marcador
-        if (GameManager.Instance.gasolina < 5) { gasText.color = Color.red; }
+        if (GameManager.Instance.gasolina < 10) { gasText.color = Color.red; }
     }
 
     public void ShowPausePanel()

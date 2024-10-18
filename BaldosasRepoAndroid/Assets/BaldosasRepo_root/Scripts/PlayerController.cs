@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     Section section;
     [SerializeField]ParticleSystem leftSparks;
     [SerializeField] ParticleSystem rightSparks;
+    AudioSource audioSource;
 
     
     private Vector3 fp; //first touch pos
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         section = FindObjectOfType<Section>();
         camOriginPos = cam.transform.position;
+        audioSource = GetComponent<AudioSource>();
         //targetPosition = positions[1].position;
         //transform.position = positions[1].position;
         //onLeft = false;
@@ -264,6 +266,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             dead();
+            audioSource.Play();
         }
     }
 
