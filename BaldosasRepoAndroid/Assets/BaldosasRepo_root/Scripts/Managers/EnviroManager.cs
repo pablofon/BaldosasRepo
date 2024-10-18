@@ -6,7 +6,7 @@ public class EnviroManager : MonoBehaviour
 {
     public int obstacleNumber;
     public Section[] sections;
-    public int currentSection;
+    public int currentSection = 0;
     void Start()
     {
         
@@ -23,7 +23,7 @@ public class EnviroManager : MonoBehaviour
         if (GameManager.Instance.sectionsToGas == GameManager.Instance.gasSection)
         {
             
-            sections[currentSection].gasPicks[currentSection].SetActive(true);
+            sections[currentSection-1].gasPicks[currentSection-1].SetActive(true);
             GameManager.Instance.sectionsToGas = 0;
         }
     }

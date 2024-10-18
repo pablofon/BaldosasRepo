@@ -88,7 +88,14 @@ public class Section : MonoBehaviour
         }
         lastRandomIndex = randomIndex; //igualamos lastRandomIndex con randomIndex actual. Así cuando vuelva a pedir un randomIndex evita repetir (Repite el while hasta que da otro numero.)
         currentRandomIndex = randomIndex;
-        enviroManager.currentSection = currentRandomIndex;
+        
+
+        if (GameManager.Instance.sectionsToGas == GameManager.Instance.gasSection)
+        {
+
+            gasPicks[currentRandomIndex].SetActive(true);
+            GameManager.Instance.sectionsToGas = 0;
+        }
 
         if (GameManager.Instance.sectionsCompleted == false)    //Si no se ha completado la carrera
         {
