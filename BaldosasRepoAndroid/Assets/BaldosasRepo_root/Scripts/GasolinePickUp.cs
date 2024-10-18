@@ -5,15 +5,18 @@ using UnityEngine;
 public class GasolinePickUp : MonoBehaviour
 {
     BoxCollider gasCol;
+    AudioSource gasAudio;
 
     [Header("Gas Stats")]
     [SerializeField] float gasolinaSumada; //Cantidad de gasolina (tiempo) que recupera el player al conseguir el pickup
     [SerializeField] GameObject part;
 
+
     // Start is called before the first frame update
     void Start()
     {
         gasCol = GetComponent<BoxCollider>();
+        gasAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,6 +32,7 @@ public class GasolinePickUp : MonoBehaviour
             GameManager.Instance.gasolina += gasolinaSumada;
             part.SetActive(false);
             part.SetActive(true);
+            gasAudio.Play();
             Invoke("ShutDownParticles", 1.5f);
 
         }
